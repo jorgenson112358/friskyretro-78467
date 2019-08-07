@@ -1,0 +1,237 @@
+/* clear default button styles from https://css-tricks.com/overriding-default-button-styles/ */
+.reset-button-style {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: #0a4d8c;
+  background: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.reset-button-style:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.App {
+  font-family: SourceSansPro, Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+}
+.header__logo {
+  height: 100px;
+}
+.header__logo--center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.header__logo-image {
+  width: 60%;
+  height: 60%;
+}
+.App-link {
+  color: #61dafb;
+}
+.main-content {
+  min-height: 60vh;
+}
+.board__card {
+  border: 1px solid #0a4d8c;
+  border-radius: 4px;
+  margin-top: 15px;
+  /* padding: 10px; */
+}
+.btn-add {
+  background-color: #56a5ef;
+  border: 0;
+}
+.btn-add:hover {
+  background-color: #96de59;
+}
+.btn-refresh {
+  background-color: #e1e7eb;
+  color: #464852;
+  border: 0;
+}
+.btn-refresh:hover {
+  background-color: #96de59;
+}
+
+.header__menu {
+  background-color: #e1e7eb;
+  color: #464852;
+}
+.header__menu a:visited {
+  color: #464852;
+}
+.header__text {
+  padding-left: 1em;
+}
+
+.column__title {
+  text-align: left;
+  color: #464852;
+  font-family: SourceSansPro;
+  padding-top: 15px;
+}
+.create-new-board {
+  height: 76px;
+  background-color: #e1e7eb;
+}
+.new-board__center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.new-board__title {
+  font-family: SourceSansPro;
+  font-size: 21px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: -0.4px;
+  color: #5e6d78;
+  display: inline;
+}
+.btn-create-board {
+  background-color: #0a4d8c;
+}
+
+.active-board {
+  height: 154px;
+  text-align: left;
+  border: 1px solid #0a4d8c;
+  border-radius: 4px;
+  margin-top: 15px;
+  padding: 5px;
+}
+.active-board__body {
+  border-bottom: 1px solid #e1e7eb;
+  height: 100px;
+}
+.active-board__title,
+.active-board__title a:link,
+.active-board__title a:visited
+ {
+  font-family: SourceSansPro;
+  font-size: 21px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #464852;
+}
+.active-board__title {
+  height: 70%;
+  width: 90%;
+  margin: 0;
+  display: inline-block;
+}
+.active-board__delete-btn {
+  width: 10%;
+  margin: 0;
+  display: inline-block;
+}
+
+.active-board__footer {
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+.active-board__delete-icon {
+  cursor: pointer;
+}
+.page__title {
+  height: 90px;
+  padding-top: 2.5rem;
+  border-bottom: 1px solid #e1e7eb;
+
+  font-family: SourceSansPro;
+  font-size: 28px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.07;
+  letter-spacing: -0.5px;
+  color: #5e6d78;
+}
+.card__text {
+  display: inline-block;
+  vertical-align: top;
+  width: 90%;
+  margin: 0;
+  padding: 10px;
+  font-family: SourceSansPro;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #464852;
+}
+.card__delete {
+  margin: 0;
+  padding: 10px 0 0 0;
+  display: inline-block;
+  width: 10%;
+  vertical-align: top;
+}
+.card__delete--btn {
+  padding: 10px 0 0 0;
+}
+.card__footer {
+  border-top: 1px solid #e1e7eb;
+}
+.card__footer--heart {
+  border-right: 1px solid #e1e7eb;
+}
+.card__footer--img {
+  padding: 10px;
+}
+.footer {
+  border-top: 1px solid #e1e7eb;
+  text-align: center;
+  font-family: SourceSansPro;
+  padding: 10px;
+  margin-top: 30px;
+}
+.add-btn {
+  width: 100%;
+  border: 1px solid #0a4d8c;
+  border-radius: 4px;
+  font-size: 26px;
+}
+.board__date {
+  font-family: SourceSansPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: #464852;
+}
+.board__date-icon {
+  padding-right: 5px;
+}
+.card__like-count {
+  padding-left: 10px;
+}
+.active-board__export-btn {
+  color: #0a4d8c;
+  font-size: 18px;
+}

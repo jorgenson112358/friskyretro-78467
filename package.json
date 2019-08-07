@@ -1,0 +1,18 @@
+{
+  "name": "retro",
+  "version": "1.0.0",
+  "description": "Simple server to serve up retrospective data from SQLite3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "sqlite3": "^4.0.6"
+  }
+}
