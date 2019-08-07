@@ -5,15 +5,15 @@ It's all hacked together fairly quickly, so the code is ugly and I'm sure not at
 
 To get it up and running locally, you'll need to run the following commands from a command line:
 
-From the root folder of the project:
+From the root folder of the project:<br />
 npm install
 
-Then change into the client directory:
-cd client
+Then change into the client directory:<br />
+cd client<br />
 npm run build
 
-Then back to the root folder:
-cd ..
+Then back to the root folder:<br />
+cd ..<br />
 npm start
 
 That will launch it on localhost:5000. Open up that url in your web browser.
