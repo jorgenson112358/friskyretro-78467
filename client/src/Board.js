@@ -14,7 +14,9 @@ class Board extends React.Component {
             formState: { title: 'Modal Title', state: 'none' },
             editing: {
                 state: false
-            }
+            },
+			refreshCount: 10,
+			intervalId: null
         };
 
         this.addWentWell = this.addWentWell.bind(this);
@@ -25,6 +27,8 @@ class Board extends React.Component {
         this.refreshData = this.refreshData.bind(this);
         this.editItem = this.editItem.bind(this);
         this.likeItem = this.likeItem.bind(this);
+		this.getAutoRefreshStatus = this.getAutoRefreshStatus.bind(this);
+		this.refreshTimer = this.refreshTimer.bind(this);
     }
 
     refreshData() {
@@ -191,13 +195,33 @@ class Board extends React.Component {
         this.sendMessage(newObj);
     }
 
+	getAutoRefreshStatus() {
+		if (this.state.refreshCount <= 0) {
+			return <span className="page__refresh-status">Auto-refresh: off</span>
+		}
+
+		return null;
+	}
+
+	refreshTimer() {
+		if (this.state.refreshCount <= 0) {
+			clearInterval(this.state.intervalId);
+		}
+		else {
+			this.setState((prevState) => ({
+				refreshCount: prevState.refreshCount - 1
+			}));
+
+			this.refreshData();
+		}
+	}
+
     componentDidMount() {
         this.refreshData();
-        var self = this;
-
-        setInterval(function () {
-            self.refreshData();
-        }, settings.boardRefreshTime);
+		var intervalId = setInterval(this.refreshTimer, settings.boardRefreshTime);
+		this.setState({
+			intervalId: intervalId
+		});
 
         $('#wentWellModal').on('shown.bs.modal', function () {
             $('#newBody').trigger('focus')
@@ -228,15 +252,16 @@ class Board extends React.Component {
 
         return (
             <div>
-                <div className="row">
-                    <div className="col-12">
-                        <div className="page__title">
-                            <h2>
-                                {boardTitle}
-                                <button type="button" className="float-right btn btn-primary btn-refresh" onClick={this.refreshData}>Refresh Board</button>
-                            </h2>
+                <div className="row page__title">
+                    <div className="col-9">
+                        <div>
+                            <h2>{boardTitle}</h2>
                         </div>
                     </div>
+					<div className="col-3">
+						{this.getAutoRefreshStatus()}
+						<button type="button" className="btn btn-primary btn-refresh" onClick={this.refreshData}>Refresh Board</button>
+					</div>
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-4 went-well">

@@ -235,3 +235,8 @@
   color: #0a4d8c;
   font-size: 18px;
 }
+.page__refresh-status {
+	font-size: 16px;
+	padding-right: 4px;
+	font-weight: normal;
+}
