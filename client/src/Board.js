@@ -205,6 +205,7 @@ class Board extends React.Component {
 
 	refreshTimer() {
 		if (this.state.refreshCount <= 0) {
+            console.log('auto-refresh stopped');
 			clearInterval(this.state.intervalId);
 		}
 		else {
